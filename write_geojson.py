@@ -1,9 +1,10 @@
 import requests
 from geojson import dump
+import os
 
 def write_geojson(url, file_name):
     r = requests.get(url)
-    with open(f'{file_name}.geojson', 'w') as f:
+    with open(f'{os.getcwd()}\\ShapeFileTest\\{file_name}.geojson', 'w') as f:
         dump(r.json(), f)
 
 if __name__ == "__main__":
